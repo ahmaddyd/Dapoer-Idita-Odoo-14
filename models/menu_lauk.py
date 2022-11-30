@@ -3,7 +3,7 @@ from odoo import api, fields, models
 
 class MenuLauk(models.Model):
     _name = 'dapoeridita.menu_lauk'
-    _description = 'Menu Lauk Dapoer Idita'
+    _description = 'Deskripsi Menu Lauk Dapoer Idita'
 
     name = fields.Char(string='Name')
     deskripsi = fields.Char(string='')
