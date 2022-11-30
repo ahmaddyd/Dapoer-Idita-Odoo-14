@@ -1,21 +1,43 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http, fields, models
+from odoo.http import request
+import json
 
+class KemasanControllers(http.Controller):
+    @http.route(['/kemasan','/kemasan/<int:idnya>'],auth='public', methods = ['GET'], csrf = True)
+    def getKemasan(self, idnya=None, **kwargs):
+        value = []
+        if not idnya:
+            package = request.env['dapoeridita.kemasan'].search([])
+            for k in package:
+                value.append({"id": k.id,
+                              "namakemasan" : k.name,
+                              "deskripsi" : k.deskripsi,
+                              "stok_tersedia" : k.stock,
+                              "harga" : k.harga,})
+            return json.dumps(value)
+        else:
+            packageid = request.env['dapoeridita.kemasan'].search([('id','=',idnya)])
+            for k in packageid:
+                value.append({"id": k.id,
+                              "namakemasan" : k.name,
+                              "deskripsi" : k.deskripsi,
+                              "stok_tersedia" : k.stock,
+                              "harga" : k.harga})
+            return json.dumps(value)
 
-# class Dapoeridita(http.Controller):
-#     @http.route('/dapoeridita/dapoeridita/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+    @http.route('/createkemasan',auth = 'user', type = 'json', methods = ['POST'])
+    def createKemasan(self, **kw):
+        if request.jsonrequest:
+            if kw['name']:
+                vals = {
+                    'name' : kw['name'],
+                    'deskripsi' : kw['deskripsi'],
+                    'stock' : kw['stock'],
+                    'harga' : kw['harga'],
+                    'box' : kw['box'],
+                    'aksesoris' : kw['kemasan_aksesoris']
+                }
+                packagebaru = request.env['dapoeridita.kemasan'].create(vals)
+                args = {'succeed': True, "ID" : packagebaru}
+                return args
 
-#     @http.route('/dapoeridita/dapoeridita/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('dapoeridita.listing', {
-#             'root': '/dapoeridita/dapoeridita',
-#             'objects': http.request.env['dapoeridita.dapoeridita'].search([]),
-#         })
-
-#     @http.route('/dapoeridita/dapoeridita/objects/<model("dapoeridita.dapoeridita"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('dapoeridita.object', {
-#             'object': obj
-#         })
