@@ -19,7 +19,7 @@
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
                 <filter string="Customer" name="customer" domain="[('is_pelanggan', '=', True)]"/>
-                <filter string="Staff" name="staff" domain="[('is_staff', '=', True)]"/>
+                <filter string="Staff" name="staff" domain="[('is_pegawai', '=', True)]"/>
             </field>
         </field>
     </record>
