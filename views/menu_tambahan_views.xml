@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="dapoeridita_menu_tambahan_view_tree" model="ir.ui.view">
+        <field name="name">Pilihan Menu List Tambahan</field>
+        <field name="model">dapoeridita.menu_tambahan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dapoeridita_menu_tambahan_view_form" model="ir.ui.view">
+        <field name="name">Pilihan Menu List Tambahan</field>
+        <field name="model">dapoeridita.menu_tambahan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="deskripsi"/>
+                        <field name="harga"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dapoeridita_menu_tambahan_view_kanban" model="ir.ui.view">
+        <field name="name">Pilihan Menu List Tambahan</field>
+        <field name="model">dapoeridita.menu_tambahan</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <h4>
+                                            <field name="name"/>
+                                        </h4>
+                                    </li>
+                                    <li>
+                                        Deskripsi :
+                                        <field name="deskripsi"/>
+                                    </li>
+                                    <li>
+                                        Harga :
+                                        <field name="harga"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dapoeridita_menu_tambahan_action" model="ir.actions.act_window">
+        <field name="name">Pilihan Menu List Tambahan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dapoeridita.menu_tambahan</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <menuitem id="dapoeridita_menu_tambahan_menu_act" name="Menu List Tambahan" parent="dapoeridita_list_menu_categ"
+              action="dapoeridita_menu_tambahan_action" sequence="40"/>
+</odoo>
