@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="dapoeridita_menu_view_tree" model="ir.ui.view">
+        <field name="name">Menu</field>
+        <field name="model">dapoeridita.menu</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="jenis"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+                <field name="menu_protein"/>
+                <field name="menu_minuman"/>
+                <field name="menu_lauk"/>
+                <field name="menu_tambahan"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dapoeridita_menu_view_form" model="ir.ui.view">
+        <field name="name">Menu</field>
+        <field name="model">dapoeridita.menu</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="jenis"/>
+                        <field name="deskripsi"/>
+                        <field name="harga"/>
+                    </group>
+
+                    <group name="isi" string="Isi Menu Paket">
+                        <field name="menu_lauk"/>
+                        <field name="menu_protein"/>
+                        <field name="menu_minuman"/>
+                        <field name="menu_tambahan"/>
+                    </group>
+
+                    <notebook>
+                        <page string="DESKRIPSI MENU LAUK">
+                            <field name="menu_lauk"/>
+                        </page>
+
+                        <page string="DESKRIPSI MENU PROTEIN">
+                            <field name="menu_protein"/>
+                        </page>
+
+                        <page string="DESKRIPSI MENU MINUMAN">
+                            <field name="menu_minuman"/>
+                        </page>
+
+                        <page string="DESKRIPSI MENU LIST TAMBAHAN">
+                            <field name="menu_tambahan"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dapoeridita_menu_action" model="ir.actions.act_window">
+        <field name="name">Daftar Paket Makanan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dapoeridita.menu</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_smiling_face">
+                Silakan tambahkan Menu Paket Anda
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="dapoeridita_menu_menu_act" name="List Menu" parent="dapoeridita_list_menu_categ"
+              action="dapoeridita_menu_action" sequence="5"/>
+</odoo>

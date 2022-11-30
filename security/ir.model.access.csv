@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_dapoeridita_dapoeridita,dapoeridita.dapoeridita,model_dapoeridita_dapoeridita,base.group_user,1,1,1,1
+access_dapoeridita_menu,dapoeridita.menu,model_dapoeridita_menu,base.group_user,1,1,1,1
