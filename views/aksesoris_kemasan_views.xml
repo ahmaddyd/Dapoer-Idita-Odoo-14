@@ -40,6 +40,6 @@
         </field>
     </record>
 
-    <menuitem id="dapoeridita_aksesoris_menu_act" name="Aksesoris Kemasan" parent="dapoeridita_kemasan_menus_categ"
+    <menuitem id="dapoeridita_aksesoris_menu_act" name="Aksesoris Kemasan" parent="dapoeridita_kemasan_menu_categ"
               action="dapoeridita_aksesoris_action" sequence="10"/>
 </odoo>
