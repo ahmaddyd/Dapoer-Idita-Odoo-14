@@ -35,7 +35,6 @@
                         <field name="tanggal_pemesanan"/>
                         <field name="tanggal_pengiriman"/>
                         <field name="total"/>
-
                         <notebook colspan="4">
                             <page name="detailorderpesanan" string="Detail Order">
                                 <field name="detailorderpesanan_ids">

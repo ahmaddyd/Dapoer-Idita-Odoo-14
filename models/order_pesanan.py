@@ -8,7 +8,7 @@ class OrderPesanan(models.Model):
     _name = 'dapoeridita.order_pesanan'
     _description = 'Order Pesanan Dapoer Idita'
 
-    detailorderpesanan_ids = fields.One2many(comodel_name='dapoeridita.detail_order_pesanan', inverse_name='order_ids',
+    detailorderpesanan_ids = fields.One2many(comodel_name='dapoeridita.detail_order_pesanan', inverse_name='order_id',
                                              string='Details Order')
     pelanggan_id = fields.Many2one(comodel_name="res.partner", string="Pelanggan", required=True,
                                    domain="[('is_pelanggan','=','true')]")
@@ -26,7 +26,7 @@ class OrderPesanan(models.Model):
     def _compute_total(self):
         for record in self:
             a = sum(
-                self.env['dapoeridita.detail_order_pesanan'].search([('order_ids', '=', record.id)]).mapped('harga'))
+                self.env['dapoeridita.detail_orders_pesanan'].search([('order_id', '=', record.id)]).mapped('harga'))
             record.total = a
 
     def barang_dikirim(self):
@@ -37,17 +37,14 @@ class DetailOrderPesanan(models.Model):
     _name = 'dapoeridita.detail_order_pesanan'
     _description = 'Detail Order Pesanan Dapoer Idita'
 
+    name = fields.Selection(string='Name',
+                            selection=[('menu', 'Menu Paket Makanan'), ('kemasan', 'Kemasan Paket Makanan')])
     menu_id = fields.Many2one(comodel_name='dapoeridita.menu', string='Menu Paket Makanan')
     kemasan_id = fields.Many2one(comodel_name='dapoeridita.kemasan', string='Kemasan Paket Makanan')
-    order_ids = fields.Many2one(comodel_name='homade.order', string='Order')
-    name = fields.Selection(string='Name',
-                            selection=[('makanan', 'Menu Paket Makanan'), ('packaging', 'Kemasan Paket Makanan')])
+    order_id = fields.Many2one(comodel_name='dapoeridita.order_pesanan', string='Order')
     harga = fields.Integer(compute='_compute_harga', string='Harga')
-
     qty = fields.Integer(string='Jumlah')
-
     harga_makanan = fields.Integer(compute='_compute_harga_makanan', string='Harga Makanan')
-
     harga_kemasan = fields.Integer(compute='_compute_harga_kemasan', string='Harga Kemasan')
 
     @api.constrains('qty')
