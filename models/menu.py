@@ -10,9 +10,9 @@ class Menu(models.Model):
                              selection=[('vegan', 'Vegan'), ('vegetarian', 'Vegetarian')])
     deskripsi = fields.Char(string='Deskripsi Menu')
     menu_lauk = fields.Many2one(comodel_name="dapoeridita.menu_lauk", string="Menu Lauk", required=True)
-    menu_minuman = fields.Many2one(comodel_name="dapoeridita.menu_minuman", string="Menu Minuman", required=True)
-    menu_protein = fields.Many2one(comodel_name="dapoeridita.menu_protein", string="Menu Protein", required=True)
-    menu_tambahan = fields.Many2one(comodel_name="dapoeridita.menu_tambahan", string="Menu List Tambahan")
+    menu_minuman = fields.Many2one(comodel_name="dapoeridita.menus_minuman", string="Menu Minuman", required=True)
+    menu_protein = fields.Many2one(comodel_name="dapoeridita.menus_protein", string="Menu Protein", required=True)
+    menu_tambahan = fields.Many2one(comodel_name="dapoeridita.menus_tambahan", string="Menu List Tambahan")
 
     deskripsi_protein = fields.Char(compute='_compute_deskripsi_protein', string='Deskripsi Menu Protein')
 
