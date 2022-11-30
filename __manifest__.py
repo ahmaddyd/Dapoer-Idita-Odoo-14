@@ -32,8 +32,9 @@
         'views/menu_minuman_views.xml',
         'views/menu_protein_views.xml',
         'views/menu_tambahan_views.xml',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/kemasan_views.xml',
+        'views/aksesoris_kemasan_views.xml',
+        'views/kemasan_box_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

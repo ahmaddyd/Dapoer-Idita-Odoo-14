@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="dapoeridita_kemasan_view_tree" model="ir.ui.view">
+        <field name="name">Pilihan Kemasan Paket</field>
+        <field name="model">dapoeridita.kemasan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+                <field name="stock"/>
+                <field name="box"/>
+                <field name="kemasan_aksesoris"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dapoeridita_kemasan_view_form" model="ir.ui.view">
+        <field name="name">Pilihan Kemasan Paket</field>
+        <field name="model">dapoeridita.kemasan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="deskripsi"/>
+                        <field name="harga"/>
+                        <field name="stock"/>
+                        <field name="box"/>
+                        <field name="kemasan_aksesoris"/>
+                    </group>
+
+                    <notebook>
+                        <page string="DESKRIPSI KEMASAN BOX">
+                            <field name="deskripsi_box"/>
+                        </page>
+
+                        <page string="DESKRIPSI KEMASAN AKSESORIS">
+                            <field name="deskripsi_aksesoris"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dapoeridita_kemasan_action" model="ir.actions.act_window">
+        <field name="name">Pilihan Kemasan Paket</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dapoeridita.kemasan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_smiling_face">
+                Silakan tambahkan Kemasan Paket Anda
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="dapoeridita_kemasan_menu_act" name="Kemasan Paket" parent="dapoeridita_kemasan_menu_categ"
+              action="dapoeridita_kemasan_action" sequence="5"/>
+</odoo>

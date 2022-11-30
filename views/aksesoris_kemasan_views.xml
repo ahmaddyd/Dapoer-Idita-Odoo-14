@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="dapoeridita_aksesoris_view_tree" model="ir.ui.view">
+        <field name="name">Pilihan Kemasan Aksesoris</field>
+        <field name="model">dapoeridita.kemasan_aksesoris</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="deskripsi"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dapoeridita_aksesoris_view_form" model="ir.ui.view">
+        <field name="name">Pilihan Kemasan Aksesoris</field>
+        <field name="model">dapoeridita.kemasan_aksesoris</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="deskripsi"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dapoeridita_aksesoris_action" model="ir.actions.act_window">
+        <field name="name">Pilihan Kemasan Aksesoris</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dapoeridita.kemasan_aksesoris</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_smiling_face">
+                Silakan tambahkan Kemasan Aksesoris Anda
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="dapoeridita_aksesoris_menu_act" name="Aksesoris Kemasan" parent="dapoeridita_kemasan_menu_categ"
+              action="dapoeridita_aksesoris_action" sequence="10"/>
+</odoo>
