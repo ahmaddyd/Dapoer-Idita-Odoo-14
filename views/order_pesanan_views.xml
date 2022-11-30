@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="dapoeridita_order_pesanan_view_tree" model="ir.ui.view">
+        <field name="name">Order Pesanan Dapoer Idita</field>
+        <field name="model">dapoeridita.order_pesanan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <header>
+                    <button string="Sudah dikirim" name="barang_dikirim" type="object" class="btn btn-success"/>
+                </header>
+                <field name="name"/>
+                <field name="pelanggan_id"/>
+                <field name="metode_pembayaran"/>
+                <field name="alamat"/>
+                <field name="tanggal_pemesanan"/>
+                <field name="tanggal_pengiriman"/>
+                <field name="sudah_dikirim"/>
+                <field name="total"/>
+                <field name="detailorderpesanan_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dapoeridita_order_pesanan_view_form" model="ir.ui.view">
+        <field name="name">Order Pesanan Dapoer Idita</field>
+        <field name="model">dapoeridita.order_pesanan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="pelanggan_id"/>
+                        <field name="metode_pembayaran"/>
+                        <field name="alamat"/>
+                        <field name="tanggal_pemesanan"/>
+                        <field name="tanggal_pengiriman"/>
+                        <field name="total"/>
+
+                        <notebook colspan="4">
+                            <page name="detailorderpesanan" string="Detail Order">
+                                <field name="detailorderpesanan_ids">
+                                    <tree editable='bottom'>
+                                        <field name="menu_id"/>
+                                        <field name="kemasan_id"/>
+                                        <field name="qty"/>
+                                        <field name="harga_makanan"/>
+                                        <field name="harga_kemasan"/>
+                                        <field name="harga" sum="Total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dapoeridita_order_pesanan_action" model="ir.actions.act_window">
+        <field name="name">Order Pesanan Dapoer Idita</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dapoeridita.order_pesanan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_smiling_face">
+                Silakan diorder pesanan Anda
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="dapoeridita_order_pesanan_menu_act" name="Order Pesanan" parent="dapoeridita_order_menu_categ"
+              action="dapoeridita_order_pesanan_action" sequence="10"/>
+</odoo>

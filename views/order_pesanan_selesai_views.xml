@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="dapoeridita_pengiriman_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pengembalian</field>
+        <field name="model">dapoeridita.order_pesanan_selesai</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="order_ids"/>
+                <field name="tanggal_dikirim"/>
+                <field name="tagihan"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dapoeridita_pengiriman_action" model="ir.actions.act_window">
+        <field name="name">Pengiriman Menu Paket</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dapoeridita.order_pesanan_selesai</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="dapoeridita_pengiriman_menu_act" name="Pengiriman" parent="dapoeridita_order_menu_categ"
+              action="dapoeridita_pengiriman_action" sequence="20"/>
+</odoo>
