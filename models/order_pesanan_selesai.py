@@ -29,7 +29,7 @@ class OrderPesananSelesai(models.Model):
         if record.tanggal_dikirim:
             self.env['dapoeridita.order_pesanan'].search([('id', '=', record.order_ids.id)]).write(
                 {'sudah_dikirim': True})
-            if record.s.metode_bayar == 'kredit':
+            if record.order_ids.metode_pembayaran == 'kredit':
                 self.env['dapoeridita.akunting'].create({'kredit': record.tagihan, 'name': record.name})
             else:
                 self.env['dapoeridita.akunting'].create({'cash': record.tagihan, 'name': record.name})
