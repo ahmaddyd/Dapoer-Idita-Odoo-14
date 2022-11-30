@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_dapoeridita_menu,dapoeridita.menu,model_dapoeridita_menu,base.group_user,1,1,1,1
+access_dapoeridita_menu_lauk,dapoeridita.menu_lauk,model_dapoeridita_menu_lauk,base.group_user,1,1,1,1
+access_dapoeridita_menu_minuman,dapoeridita.menu_minuman,model_dapoeridita_menu_minuman,base.group_user,1,1,1,1
+access_dapoeridita_menu_protein,dapoeridita.menu_protein,model_dapoeridita_menu_protein,base.group_user,1,1,1,1
+access_dapoeridita_menu_tambahan,dapoeridita.menu_tambahan,model_dapoeridita_menu_tambahan,base.group_user,1,1,1,1
