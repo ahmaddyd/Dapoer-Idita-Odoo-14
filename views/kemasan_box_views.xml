@@ -1,9 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <!-- homade.kotak tree view -->
-    <record id="homade_kotak_view_tree" model="ir.ui.view">
+    <record id="dapoeridita_kemasan_box_view_tree" model="ir.ui.view">
         <field name="name">Kotak Packanging</field>
-        <field name="model">homade.kotak</field>
+        <field name="model">dapoeridita.kemasan_box</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -12,10 +11,9 @@
         </field>
     </record>
 
-    <!-- homade.kotak form view -->
-    <record id="homade_kotak_view_form" model="ir.ui.view">
+    <record id="dapoeridita_kemasan_box_view_form" model="ir.ui.view">
         <field name="name">Kotak Packanging</field>
-        <field name="model">homade.kotak</field>
+        <field name="model">dapoeridita.kemasan_box</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
@@ -28,11 +26,10 @@
         </field>
     </record>
 
-    <!-- homade.kotak action window -->
-    <record id="homade_kotak_action" model="ir.actions.act_window">
+    <record id="dapoeridita_kemasan_box_action" model="ir.actions.act_window">
         <field name="name">Daftar Kotak Packanging</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">homade.kotak</field>
+        <field name="res_model">dapoeridita.kemasan_box</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_smiling_face">
@@ -44,9 +41,9 @@
     </record>
 
     <menuitem
-            id="homade_kotak_menu_act"
-            name="Kotak"
-            parent="dapoeridita_kemasan_menu_categ"
-            action="homade_kotak_action"
+            id="dapoeridita_kemasan_box_menu_act"
+            name="Box"
+            parent="dapoeridita_kemasan_menus_categ"
+            action="dapoeridita_kemasan_box_action"
             sequence="20"/>
 </odoo>
