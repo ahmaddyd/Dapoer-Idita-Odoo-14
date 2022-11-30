@@ -56,7 +56,7 @@
     </record>
 
     <record id="dapoeridita_order_pesanan_action" model="ir.actions.act_window">
-        <field name="name">Order Pesanan Dapoer Idita</field>
+        <field name="name">Order Menu Pesanan Dapoer Idita</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">dapoeridita.order_pesanan</field>
         <field name="view_mode">tree,form</field>
