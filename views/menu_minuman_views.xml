@@ -71,5 +71,5 @@
     </record>
 
     <menuitem id="dapoeridita_menu_minuman_act" name="Menu Minuman" parent="dapoeridita_list_menu_categ"
-              action="dapoeridita_menu_minuman_action" sequence="20"/>
+              action="dapoeridita_menu_minuman_action" sequence="30"/>
 </odoo>

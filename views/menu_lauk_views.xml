@@ -71,5 +71,5 @@
     </record>
 
     <menuitem id="dapoeridita_menu_act" name="Menu Lauk" parent="dapoeridita_list_menu_categ"
-              action="dapoeridita_menu_lauk_action" sequence="30"/>
+              action="dapoeridita_menu_lauk_action" sequence="20"/>
 </odoo>
