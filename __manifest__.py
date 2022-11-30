@@ -30,6 +30,7 @@
         'views/menu_views.xml',
         'views/menu_lauk_views.xml',
         'views/menu_minuman_views.xml',
+        'views/menu_protein_views.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
