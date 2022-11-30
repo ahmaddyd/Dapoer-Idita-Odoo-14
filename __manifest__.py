@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "dapoeridita",
+    'name': "DAPOER IDITA",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+       Dapoer Idita merupakan Pemesanan Tempat Makanan secara 
+       online yang dapat menjangkau lapisan menengah ke bawah terutama pelajar dan mahasiswa.""",
 
     'description': """
-        Long description of module's purpose
+        Tempat Pemesanan makanan menengah ke bawah
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Ahmad Yulian Dinata",
+    'website': "https://www.linkedin.com/in/ahmaddyd/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Productivity',
+    'version': '1.2',
+    'application': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
