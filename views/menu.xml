@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="dapoeridita_menu_root" name="DAPOER IDITA" sequence="10"/>
+    <menuitem id="dapoeridita_list_menu_categ" name="List Menu" parent="dapoeridita_menu_root" sequence="10"/>
+    <menuitem id="dapoeridita_packaging_menu_categ" name="Kemasan Paket" parent="dapoeridita_menu_root" sequence="20"/>
+    <menuitem id="dapoeridita_order_menu_categ" name="Order" parent="dapoeridita_menu_root" sequence="30"/>
+    <menuitem id="dapoeridita_contact_menu_categ" name="Kontak" parent="dapoeridita_menu_root" sequence="25"/>
+</odoo>
