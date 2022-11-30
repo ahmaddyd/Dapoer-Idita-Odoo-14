@@ -26,7 +26,7 @@ class OrderPesanan(models.Model):
     def _compute_total(self):
         for record in self:
             a = sum(
-                self.env['dapoeridita.detail_orders_pesanan'].search([('order_id', '=', record.id)]).mapped('harga'))
+                self.env['dapoeridita.detail_order_pesanan'].search([('order_id', '=', record.id)]).mapped('harga'))
             record.total = a
 
     def barang_dikirim(self):
