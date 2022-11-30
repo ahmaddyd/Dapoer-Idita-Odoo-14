@@ -35,6 +35,8 @@
         'views/kemasan_views.xml',
         'views/aksesoris_kemasan_views.xml',
         'views/kemasan_box_views.xml',
+        'views/pegawai_views.xml',
+        'views/pelanggan_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

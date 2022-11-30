@@ -58,6 +58,6 @@
         </field>
     </record>
 
-    <menuitem id="dapoeridita_kemasan_menu_act" name="Kemasan Paket" parent="dapoeridita_kemasan_menu_categ"
+    <menuitem id="dapoeridita_kemasan_menu_act" name="Kemasan Paket" parent="dapoeridita_kemasan_menus_categ"
               action="dapoeridita_kemasan_action" sequence="5"/>
 </odoo>
