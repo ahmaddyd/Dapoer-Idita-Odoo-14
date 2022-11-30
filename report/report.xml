@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_dapoeridita_order">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div style="margin-top:150px">
+                        <t t-call="dapoeridita.report_dapoeridita_meu_order"/>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_wo_order" model="ir.actions.report">
+            <field name="name">Report Pemesan Makanan</field>
+            <field name="model">dapoeridita.order_pesanan</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">dapoeridita.report_dapoeridita_order</field>
+            <field name="report_file">dapoeridita.report_dapoeridita_order</field>
+            <field name="binding_model_id" ref="model_dapoeridita_order_pesanan"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
