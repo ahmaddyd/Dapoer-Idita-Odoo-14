@@ -43,7 +43,7 @@
     <menuitem
             id="dapoeridita_kemasan_box_menu_act"
             name="Box"
-            parent="dapoeridita_kemasan_menus_categ"
+            parent="dapoeridita_kemasan_menu_categ"
             action="dapoeridita_kemasan_box_action"
             sequence="20"/>
 </odoo>
