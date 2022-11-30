@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="dapoeridita_akunting_view_tree" model="ir.ui.view">
+        <field name="name">Akunting Dapoer Idita</field>
+        <field name="model">dapoeridita.akunting</field>
+        <field name="arch" type="xml">
+            <tree create="false">
+                <field name="name"/>
+                <field name="tanggal"/>
+                <field name="debet"/>
+                <field name="cash"/>
+                <field name="kredit"/>
+                <field name="saldo"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dapoeridita_akunting_action" model="ir.actions.act_window">
+        <field name="name">Akunting Dapoer Idita</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dapoeridita.akunting</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_smiling_face">
+                Pemasukan akan terinput otomatis
+            </p>
+            <p>
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="dapoeridita_akunting_menu_act" name="Akunting" parent="dapoeridita_menu_root"
+              action="dapoeridita_akunting_action" sequence="50"/>
+</odoo>
