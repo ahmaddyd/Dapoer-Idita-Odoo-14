@@ -4,6 +4,11 @@ access_dapoeridita_menu_lauk,dapoeridita.menu_lauk,model_dapoeridita_menu_lauk,b
 access_dapoeridita_menu_minuman,dapoeridita.menu_minuman,model_dapoeridita_menu_minuman,base.group_user,1,1,1,1
 access_dapoeridita_menu_protein,dapoeridita.menu_protein,model_dapoeridita_menu_protein,base.group_user,1,1,1,1
 access_dapoeridita_menu_tambahan,dapoeridita.menu_tambahan,model_dapoeridita_menu_tambahan,base.group_user,1,1,1,1
+access_dapoeridita_akunting,dapoeridita.akunting,model_dapoeridita_akunting,base.group_user,1,1,1,1
+access_dapoeridita_akunting,dapoeridita.akunting,model_dapoeridita_akunting,base.group_user,1,1,1,1
+access_dapoeridita_order_pesanan,dapoeridita.order_pesanan,model_dapoeridita_order_pesanan,base.group_user,1,1,1,1
+access_dapoeridita_detail_order_pesanan,dapoeridita.detail_order_pesanan,model_dapoeridita_detail_order_pesanan,base.group_user,1,1,1,1
+access_dapoeridita_kemasan,dapoeridita.kemasan,model_dapoeridita_kemasan,base.group_user,1,1,1,1
 access_dapoeridita_kemasan_box,dapoeridita.kemasan_box,model_dapoeridita_kemasan_box,base.group_user,1,1,1,1
 access_dapoeridita_kemasan,dapoeridita.kemasan,model_dapoeridita_kemasan,base.group_user,1,1,1,1
 access_dapoeridita_kemasan_aksesoris,dapoeridita.kemasan_aksesoris,model_dapoeridita_kemasan_aksesoris,base.group_user,1,1,1,1
