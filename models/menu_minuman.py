@@ -8,3 +8,4 @@ class MenuMinuman(models.Model):
     name = fields.Char(string='Name')
     deskripsi = fields.Char(string='Deskripsi')
     harga = fields.Integer(string='Harga')
+    images = fields.Binary(string='Gambar Makanan')
