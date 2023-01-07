@@ -6,7 +6,7 @@ class Menu(models.Model):
     _description = 'Deskripsi Menu Paket Dapoer Idita'
 
     name = fields.Char(string='Name')
-    jenis = fields.Selection(string='Jenis Menu Book',
+    jenis = fields.Selection(string='Jenis Buku Menu',
                              selection=[('vegan', 'Vegan'), ('vegetarian', 'Vegetarian')])
     deskripsi = fields.Char(string='Deskripsi Menu')
     menu_lauk = fields.Many2one(comodel_name="dapoeridita.menu_lauk", string="Menu Lauk", required=True)
