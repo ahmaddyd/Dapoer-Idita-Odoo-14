@@ -17,7 +17,7 @@ class OrderPesanan(models.Model):
     name = fields.Char(string='Kode Order', required=True)
     metode_pembayaran = fields.Selection(string='Metode Pembayaran', selection=[('kredit', 'Kredit'), ('cash', 'Cash')],
                                          required=True)
-    tanggal_pemesanan = fields.Date(string='Tanggal Pemesanan', default=fields.Date.today(), required=True)
+    tanggal_pemesanan = fields.Datetime(string='Tanggal Pemesanan', default=fields.Datetime.now, required=True)
     tanggal_pengiriman = fields.Datetime(string='Tanggal Pengiriman',
                                          default=fields.Datetime.now() + datetime.timedelta(days=1), required=True)
     sudah_dikirim = fields.Boolean(string='Sudah Dikirim', default=False)
