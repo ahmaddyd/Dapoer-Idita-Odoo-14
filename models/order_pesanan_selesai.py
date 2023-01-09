@@ -9,8 +9,10 @@ class OrderPesananSelesai(models.Model):
     name = fields.Char(compute='_compute_nama_pelanggan', string='Nama Pelanggan')
     order_ids = fields.Many2one(comodel_name='dapoeridita.order_pesanan', string='Order',
                                 domain="[('sudah_dikirim','=',False)]")
-    tanggal_dikirim = fields.Date(string='Tanggal Pengiriman', default=fields.Date.today())
-    tagihan = fields.Char(compute='_compute_tagihan', string='Tagihan')
+    tanggal_dikirim = fields.Datetime(string='Tanggal Dikirim', default=fields.Datetime.now)
+    tagihan = fields.Monetary(compute='_compute_tagihan', string='Tagihan')
+    company_id = fields.Many2one('res.company', string="Company", default=lambda self: self.env.company)
+    currency_id = fields.Many2one('res.currency', related="company_id.currency_id")
 
     @api.depends('order_ids')
     def _compute_tagihan(self):

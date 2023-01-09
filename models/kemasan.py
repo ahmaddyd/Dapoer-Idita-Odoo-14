@@ -7,7 +7,7 @@ class Kemasan(models.Model):
 
     name = fields.Char(string='Name')
     deskripsi = fields.Char(string='Deskripsi')
-    harga = fields.Integer(string='Harga')
+    harga = fields.Monetary(string='Harga')
     stock = fields.Integer(string='Stok Kemasan Pengiriman')
     box = fields.Many2one(comodel_name="dapoeridita.kemasan_box", string="Pilihan Box", required=True)
     deskripsi_box = fields.Char(compute='_compute_deskripsi_box', string='Deskripsi Kemasan Box')
@@ -25,3 +25,6 @@ class Kemasan(models.Model):
     def _compute_deskripsi_aksesoris(self):
         for record in self:
             record.deskripsi_aksesoris = record.kemasan_aksesoris.deskripsi
+
+    company_id = fields.Many2one('res.company', string="Company", default=lambda self: self.env.company)
+    currency_id = fields.Many2one('res.currency', related="company_id.currency_id")

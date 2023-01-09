@@ -15,8 +15,9 @@
                 <field name="tanggal_pemesanan"/>
                 <field name="tanggal_pengiriman"/>
                 <field name="sudah_dikirim"/>
-                <field name="total"/>
+                <field name="total" widget="monetary"/>
                 <field name="detailorderpesanan_ids"/>
+                <field name="currency_id" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -34,17 +35,19 @@
                         <field name="alamat"/>
                         <field name="tanggal_pemesanan"/>
                         <field name="tanggal_pengiriman"/>
-                        <field name="total"/>
+                        <field name="total" widget="monetary"/>
+                        <field name="currency_id" invisible="1"/>
                         <notebook colspan="4">
                             <page name="detailorderpesanan" string="Detail Order">
-                                <field name="detailorderpesanan_ids">
+                                <field name="detailorderpesanan_ids" mode="tree,kanban">
                                     <tree editable='bottom'>
                                         <field name="menu_id"/>
                                         <field name="kemasan_id"/>
                                         <field name="qty"/>
-                                        <field name="harga_makanan"/>
-                                        <field name="harga_kemasan"/>
-                                        <field name="harga" sum="Total"/>
+                                        <field name="harga_makanan" widget="monetary"/>
+                                        <field name="harga_kemasan" widget="monetary"/>
+                                        <field name="harga" sum="Total" widget="monetary"/>
+                                        <field name="currency_id" invisible="1"/>
                                     </tree>
                                 </field>
                             </page>

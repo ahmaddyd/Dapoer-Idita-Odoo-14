@@ -21,7 +21,10 @@ class Menu(models.Model):
         for record in self:
             record.deskripsi_protein = record.menu_protein.deskripsi
 
-    harga = fields.Char(compute="_compute_harga", string='Harga')
+    harga = fields.Monetary(compute="_compute_harga", string='Harga')
+
+    company_id = fields.Many2one('res.company', string="Company", default=lambda self: self.env.company)
+    currency_id = fields.Many2one('res.currency', related="company_id.currency_id")
 
     @api.depends('menu_protein', 'menu_minuman', 'menu_lauk', 'menu_tambahan')
     def _compute_harga(self):

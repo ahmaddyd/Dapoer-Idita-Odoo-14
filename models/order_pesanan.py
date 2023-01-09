@@ -22,6 +22,9 @@ class OrderPesanan(models.Model):
                                          default=fields.Datetime.now() + datetime.timedelta(days=1), required=True)
     sudah_dikirim = fields.Boolean(string='Sudah Dikirim', default=False)
 
+    company_id = fields.Many2one('res.company', string="Company", default=lambda self: self.env.company)
+    currency_id = fields.Many2one('res.currency', related="company_id.currency_id")
+
     @api.depends('detailorderpesanan_ids')
     def _compute_total(self):
         for record in self:
@@ -42,6 +45,7 @@ class DetailOrderPesanan(models.Model):
     menu_id = fields.Many2one(comodel_name='dapoeridita.menu', string='Menu Paket Makanan')
     kemasan_id = fields.Many2one(comodel_name='dapoeridita.kemasan', string='Kemasan Paket Makanan')
     order_id = fields.Many2one(comodel_name='dapoeridita.order_pesanan', string='Order')
+    currency_id = fields.Many2one('res.currency', related="order_id.currency_id")
     harga = fields.Integer(compute='_compute_harga', string='Harga')
     qty = fields.Integer(string='Jumlah')
     harga_makanan = fields.Integer(compute='_compute_harga_makanan', string='Harga Makanan')

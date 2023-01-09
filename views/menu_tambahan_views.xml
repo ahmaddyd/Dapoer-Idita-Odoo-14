@@ -8,6 +8,7 @@
                 <field name="name"/>
                 <field name="deskripsi"/>
                 <field name="harga"/>
+                <field name="currency_id" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -22,6 +23,7 @@
                         <field name="name"/>
                         <field name="deskripsi"/>
                         <field name="harga"/>
+                        <field name="currency_id" invisible="1"/>
                     </group>
                 </sheet>
             </form>
@@ -36,6 +38,7 @@
                 <field name="name"/>
                 <field name="deskripsi"/>
                 <field name="harga"/>
+                <field name="currency_id" invisible="1"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">

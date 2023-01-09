@@ -8,6 +8,7 @@
                 <field name="name"/>
                 <field name="deskripsi"/>
                 <field name="harga"/>
+                <field name="currency_id" invisible="1"/>
                 <field name="images" widget="image" class="oe_avatar"/>
             </tree>
         </field>
@@ -23,6 +24,7 @@
                         <field name="name"/>
                         <field name="deskripsi"/>
                         <field name="harga"/>
+                        <field name="currency_id" invisible="1"/>
                         <field name="images" widget="image"/>
                     </group>
                 </sheet>
@@ -39,6 +41,7 @@
                 <field name="name"/>
                 <field name="deskripsi"/>
                 <field name="harga"/>
+                <field name="currency_id" invisible="1"/>
                 <field name="images"/>
                 <templates>
                     <t t-name="kanban-box">

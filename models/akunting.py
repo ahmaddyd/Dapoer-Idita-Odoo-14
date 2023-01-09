@@ -14,6 +14,8 @@ class Akunting(models.Model):
     cash = fields.Integer(string='Cash')
     kredit = fields.Integer(string='Kredit')
     saldo = fields.Float(compute='_compute_saldo', string='Saldo')
+    company_id = fields.Many2one('res.company', string="Company", default=lambda self: self.env.company)
+    currency_id = fields.Many2one('res.currency', related="company_id.currency_id")
 
     @api.depends('debet','kredit','cash')
     def _compute_saldo(self):

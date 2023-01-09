@@ -8,6 +8,7 @@
                 <field name="name"/>
                 <field name="deskripsi"/>
                 <field name="harga"/>
+                <field name="currency_id" invisible="1"/>
                 <field name="stock"/>
                 <field name="box"/>
                 <field name="kemasan_aksesoris"/>
@@ -25,6 +26,7 @@
                         <field name="name"/>
                         <field name="deskripsi"/>
                         <field name="harga"/>
+                        <field name="currency_id" invisible="1"/>
                         <field name="stock"/>
                         <field name="box"/>
                         <field name="kemasan_aksesoris"/>

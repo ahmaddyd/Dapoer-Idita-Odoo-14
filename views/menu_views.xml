@@ -13,6 +13,7 @@
                 <field name="menu_minuman"/>
                 <field name="menu_lauk"/>
                 <field name="menu_tambahan"/>
+                <field name="currency_id" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -28,6 +29,7 @@
                         <field name="jenis"/>
                         <field name="deskripsi"/>
                         <field name="harga"/>
+                        <field name="currency_id" invisible="1"/>
                     </group>
 
                     <group name="isi" string="Isi Menu Paket">

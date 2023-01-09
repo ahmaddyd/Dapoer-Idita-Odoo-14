@@ -7,10 +7,11 @@
             <tree create="false">
                 <field name="name"/>
                 <field name="tanggal"/>
-                <field name="debet"/>
-                <field name="cash"/>
-                <field name="kredit"/>
-                <field name="saldo"/>
+                <field name="debet" widget="monetary"/>
+                <field name="cash" widget="monetary"/>
+                <field name="kredit" widget="monetary"/>
+                <field name="saldo" widget="monetary"/>
+                <field name="currency_id" invisible="1"/>
             </tree>
         </field>
     </record>
